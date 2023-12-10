@@ -46,7 +46,6 @@ app.get('*', (req, res) => {
 
 export function lunch(qr) {
     code = qr
-    console.log(code)
     server = http.Server(app);
     server.listen(process.env.PORT || 80);
     console.log('serveur listen on port ', 80)
@@ -57,6 +56,5 @@ export function lunch(qr) {
 }
 export function changeQr(qrCode) {
     code = qrCode
-    console.log(code)
     socket.emit('new:qrcode', code)
 }
